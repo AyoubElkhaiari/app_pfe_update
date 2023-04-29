@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">appBeta</string>
+    <string name="fragment1">SET YOUR BLUETOOTH UP</string>
+    <string name="fragment2">LIST OF AVAILABLE DEVICES</string>
+    <string name="nextButton">Next </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="doorBtnController">Door : </string>
+    <string name="windowBtnController">Window : </string>
+    <string name="lightBtnController">Light : </string>
+    <string name="doorWindowBtnControllerOpen">Open</string>
+    <string name="doorWindowBtnControllerClose">Close</string>
+    <string name="lightBtnControllerTurnOn">Turn On</string>
+    <string name="lightBtnControllerTurnOff">Turn Off</string>
+    <string name="goSpeech">Go To Speech</string>
+
+</resources>

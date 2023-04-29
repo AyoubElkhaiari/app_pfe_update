@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.app_v7.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_configFragment"
+            app:destination="@id/configFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.app_v7.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_connectBluetoothFragment"
+            app:destination="@id/connectBluetoothFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectBluetoothFragment"
+        android:name="com.example.app_v7.ConnectBluetoothFragment"
+        android:label="fragment_connect_bluetooth"
+        tools:layout="@layout/fragment_connect_bluetooth" >
+        <action
+            android:id="@+id/action_connectBluetoothFragment_to_listDevicesFragment"
+            app:destination="@id/listDevicesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listDevicesFragment"
+        android:name="com.example.app_v7.ListDevicesFragment"
+        android:label="fragment_list_devices"
+        tools:layout="@layout/fragment_list_devices" >
+        <action
+            android:id="@+id/action_listDevicesFragment_to_btnControllerFragment"
+            app:destination="@id/btnControllerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/btnControllerFragment"
+        android:name="com.example.app_v7.BtnControllerFragment"
+        android:label="fragment_btn_controller"
+        tools:layout="@layout/fragment_btn_controller" >
+        <action
+            android:id="@+id/action_btnControllerFragment_to_voiceControllerFragment"
+            app:destination="@id/voiceControllerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/voiceControllerFragment"
+        android:name="com.example.app_v7.VoiceControllerFragment"
+        android:label="fragment_voice_controller"
+        tools:layout="@layout/fragment_voice_controller" >
+        <action
+            android:id="@+id/action_voiceControllerFragment_to_configFragment"
+            app:destination="@id/configFragment" />
+        <action
+            android:id="@+id/action_voiceControllerFragment_to_btnControllerFragment"
+            app:destination="@id/btnControllerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/configFragment"
+        android:name="com.example.app_v7.ConfigFragment"
+        android:label="fragment_config"
+        tools:layout="@layout/fragment_config" />
+</navigation>
