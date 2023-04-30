@@ -7,49 +7,7 @@ import java.util.Map;
 
 public class Commands {
 
-//    public void myCommands() {
-//        SharedPreferences.Editor editor = getSharedPreferences("MyPrefsFile", MODE_PRIVATE).edit();
-//        editor.putString("key", "value");
-//        editor.apply();
-//    }
 
-
-
-//    public class Value{
-//        byte byteValue;
-//        boolean state;
-//        public Value(byte byteValue, boolean state) {
-//            this.byteValue = byteValue;
-//            this.state = state;
-//        }
-//    }
-//    static class State{
-//        private static boolean doorOpen=false,windowsOpen=false,lightsOn=false;
-//        public static Boolean getState(byte byteValue){
-//            if(byteValue == 1 || byteValue == 2){
-//                return doorOpen;
-//            }
-//            else if( byteValue == 3 || byteValue == 4){
-//                return windowsOpen;
-//            }
-//            else if(byteValue == 5 || byteValue == 6 ){
-//                return lightsOn;
-//            }
-//            return null;
-//
-//        }
-//        public static void setState(byte byteValue,boolean state){
-//            if(byteValue == 1 || byteValue == 2){
-//                doorOpen=state;
-//            }
-//            else if( byteValue == 3 || byteValue == 4){
-//                windowsOpen=state;
-//            }
-//            else if(byteValue == 5 || byteValue == 6 ){
-//                lightsOn=state;
-//            }
-//        }
-//    }
 
     private static HashMap<String,Value> commands;
 
@@ -133,9 +91,6 @@ public class Commands {
     }
 
 
-//    public static Map<String, Value> getDefaultCommands() {
-//        return commands;
-//    }
 
 
     /* ==== States Section ==== */
