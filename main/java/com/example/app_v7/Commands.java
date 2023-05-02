@@ -18,25 +18,26 @@ public class Commands {
     public static SharedPreferences.Editor stateEditor;
     public static  SharedPreferences CMDS_PREFS ;
     public static SharedPreferences.Editor cmdsEditor ;
-    private static Context context;
+    private  Context context;
 
 
 
     public Commands(Context context) {
         this.context = context;
+        initializeStorage();
+        saveToStorage();
         init();
 
 
     }
 
-    private static void initializeStorage() {
+    private  void initializeStorage() {
         STATE_PREFS = context.getSharedPreferences("states_saver", Context.MODE_PRIVATE);
         CMDS_PREFS = context.getSharedPreferences("cmds_saver", Context.MODE_PRIVATE);
         stateEditor = STATE_PREFS.edit();
         cmdsEditor = CMDS_PREFS.edit();
     }
     private void saveToStorage() {
-        initializeStorage();
         cmdsEditor.putString("1", "ouvre la porte" ).apply();
         cmdsEditor.putString("2", "ferme la porte" ).apply();
         cmdsEditor.putString("3", "ouvre la fenêtre").apply();
@@ -48,19 +49,9 @@ public class Commands {
 
 
 
-//    private void init(){
-//        commands = new HashMap<String,Value>();
-//        commands.put("ouvre la porte",new Value((byte) 1,false));
-//        commands.put("ferme la porte",new Value((byte)2,true));
-//        commands.put("ouvre la fenêtre",new Value((byte)3,false));
-//        commands.put("ouvre la fenêtre",new Value((byte)4,true));
-//        commands.put("allume la lampe",new Value((byte)5,false));
-//        commands.put("eteins la lampe",new Value((byte)6,true));
-//
-//    }
+
 
     private void init() {
-        saveToStorage();
         commands = new HashMap<String, Value>();
         commands.put(CMDS_PREFS.getString("1", "-1"), new Value((byte) 1,false));
         commands.put(CMDS_PREFS.getString("2", "-1"), new Value((byte) 2,true));
@@ -97,43 +88,43 @@ public class Commands {
 
 
     public void saveDoorState(boolean state) {
-        initializeStorage();
+
         stateEditor.putBoolean("door_state", state);
         stateEditor.apply();
     }
 
     public boolean getDoorState() {
-        initializeStorage();
+
         return STATE_PREFS.getBoolean("door_state", State.doorOpen);
     }
 
 
     public void saveWindowState(boolean state) {
-        initializeStorage();
+
         stateEditor.putBoolean("window_state", state);
         stateEditor.apply();
     }
 
     public boolean getWindowState() {
-        initializeStorage();
+
         return STATE_PREFS.getBoolean("window_state", State.windowsOpen);
     }
 
     public void saveLightState(boolean state) {
-        initializeStorage();
+
         stateEditor.putBoolean("light_state", state);
         stateEditor.apply();
     }
 
     public boolean getLightState() {
-        initializeStorage();
+
         return STATE_PREFS.getBoolean("light_state", State.lightsOn);
     }
 
     /* ==== Cmds Section ==== */
 
-    public static void resetCommands () {
-        initializeStorage();
+    public void resetCommands () {
+
         cmdsEditor.putString("1", "ouvre la porte").apply();
         cmdsEditor.putString("2", "ferme la porte").apply();
         cmdsEditor.putString("3", "ouvre la fenêtre").apply();
@@ -143,8 +134,8 @@ public class Commands {
 
     }
 
-    public static void updateCmd(String key, String value) {
-        initializeStorage();
+    public void updateCmd(String key, String value) {
+
         cmdsEditor.putString(key, value).apply();
     }
 
